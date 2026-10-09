@@ -1,14 +1,14 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ULTRON SHOUT</title>
+<link rel="manifest" href="manifest.json">
 <style>
 *{margin:0;padding:0}body{background:#0a0e1a;color:#7de2ff;font-family:monospace;overflow:hidden}
 canvas{display:block;margin:0 auto}
-#ui{position:absolute;top:0;left:0;right:0;padding:15px;display:flex;justify-content:space-between}
+#ui{position:absolute;top:0;left:0;right:0;padding:15px;display:flex;justify-content:space-between;z-index:5}
 #meter{width:120px;height:12px;background:#1a2744;border-radius:10px;overflow:hidden}
 #meter-fill{height:100%;width:0%;background:#00f2ff;transition:width 0.05s}
 #start{position:absolute;inset:0;background:#0a0e1add;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;z-index:10}
@@ -28,6 +28,9 @@ function reset(){bot=new Bot();obstacles=[];score=0;gameOver=false;for(let i=0;i
 function loop(){if(!running)return;ctx.clearRect(0,0,W,H);if(!gameOver){bot.update();let speed=3+score*0.07;obstacles.forEach(o=>o.update(speed));if(obstacles[0].x<-60){obstacles.shift();obstacles.push(new Obstacle(W+50));score++;document.getElementById('score').textContent=score;if(score>best){best=score;document.getElementById('best').textContent=best;localStorage.setItem('ultron_best',best)}}obstacles.forEach(o=>{if(bot.x+bot.r>o.x&&bot.x-bot.r<o.x+o.w){if(bot.y-bot.r<o.y||bot.y+bot.r>o.y+o.gap)gameOver=true}})}obstacles.forEach(o=>o.draw());bot.draw();document.getElementById('meter-fill').style.width=Math.min(100,micLevel)+'%';if(gameOver){ctx.fillStyle='#ff2a5a';ctx.font='bold 28px monospace';ctx.textAlign='center';ctx.fillText('CRASHED!',W/2,H/2)}requestAnimationFrame(loop)}
 async function initMic(){try{const s=await navigator.mediaDevices.getUserMedia({audio:true});const ac=new(window.AudioContext||window.webkitAudioContext)();const src=ac.createMediaStreamSource(s);analyser=ac.createAnalyser();analyser.fftSize=256;src.connect(analyser);micData=new Uint8Array(analyser.frequencyBinCount);setInterval(()=>{analyser.getByteFrequencyData(micData);let sum=0;for(let v of micData)sum+=v;micLevel=Math.min(100,(sum/micData.length)*1.8)},50);return true}catch(e){alert('Allow mic! '+e.message);return false}}
 document.getElementById('btn').onclick=async()=>{if(!await initMic())return;document.getElementById('start').style.display='none';running=true;reset();loop()};c.addEventListener('touchstart',()=>{if(gameOver)reset()});
+</script>
+<script>
+if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js')
 </script>
 </body>
 </html>
