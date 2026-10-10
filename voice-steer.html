@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice Steer</title>
+<style>
+  body{margin:0;background:#0f0f1a;color:white;font-family:sans-serif;text-align:center;overflow:hidden}
+  canvas{display:block;margin:0 auto;background:linear-gradient(#222,#111);border:2px solid #444}
+  #status{padding:12px;font-size:18px}
+  button{padding:12px 24px;font-size:18px;border-radius:12px;border:none;background:#00ff88;color:black;font-weight:bold;margin:10px}
+ .left{color:#ff4444}.right{color:#44ff44}
+</style>
+</head>
+<body>
+<h2>🎤 Say LEFT or RIGHT</h2>
+<canvas id="game" width="360" height="600"></canvas>
+<div id="status">Tap START and allow mic</div>
+<button id="start">START GAME</button>
 
+<script>
+const canvas = document.getElementById('game');
+const ctx = canvas.getContext('2d');
+const status = document.getElementById('status');
+let playerX = 160;
+let playerY = 500;
+let speed = 0;
+let targetX = 160;
+let score = 0;
+
+const car = {w:40,h:70};
+
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  // road lines
+  ctx.strokeStyle="#333";
+  ctx.setLineDash([20,20]);
+  ctx.beginPath(); ctx.moveTo(120,0); ctx.lineTo(120,600); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(240,0); ctx.lineTo(240,600); ctx.stroke();
+  ctx.setLineDash([]);
+  // player
+  ctx.fillStyle="#00ff88";
+  ctx.fillRect(playerX, playerY, car.w, car.h);
+  ctx.fillStyle="white";
+  ctx.fillRect(playerX+5, playerY+5, car.w-10, 10);
+
+  playerX += (targetX - playerX) * 0.1;
+  requestAnimationFrame(draw);
+}
+
+function move(dir){
+  if(dir.includes("left")){
+    targetX = Math.max(10, targetX - 70);
+    status.innerHTML = `Heard: <span class="left">LEFT ←</span>`;
+    status.style.background="#ff444422";
+  }
+  if(dir.includes("right")){
+    targetX = Math.min(310, targetX + 70);
+    status.innerHTML = `Heard: <span class="right">RIGHT →</span>`;
+    status.style.background="#44ff4444";
+  }
+  setTimeout(()=>status.style.background="transparent",300);
+}
+
+draw();
+
+// Voice Recognition
+const Speech = window.SpeechRecognition || window.webkitSpeechRecognition;
+if(!Speech){
+  status.textContent="Sorry, use Chrome browser. Safari doesn't support voice.";
+} else {
+  const rec = new Speech();
+  rec.continuous = true;
+  rec.interimResults = false;
+  rec.lang = 'en-US';
+
+  rec.onresult = (e) => {
+    const last = e.results[e.results.length-1][0].transcript.toLowerCase().trim();
+    console.log(last);
+    move(last);
+  };
+  rec.onend = () => rec.start();
+
+  document.getElementById('start').onclick = () => {
+    rec.start();
+    status.textContent="Listening... Say LEFT / RIGHT loud!";
+    document.getElementById('start').style.display='none';
+  };
+}
+</script>
+</body>
+</html>
