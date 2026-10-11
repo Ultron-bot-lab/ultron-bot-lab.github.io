@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Emmanuel Kimtai — ICT student at JOOUST specializing in Web Development and Networking (VLAN, Inter-VLAN routing, Cisco device configuration).">
+<title>Emmanuel Kimtai | ICT Portfolio — JOOUST</title>
+
+<!-- Prevent flash of wrong theme: run before CSS paints -->
+<script>
+  (function () {
+    var saved = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = saved || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a href="#home" class="skip-link">Skip to content</a>
+
+<header>
+  <nav class="navbar" aria-label="Main navigation">
+    <h2 class="logo">Emmanuel<span>.</span></h2>
+
+    <div class="nav-right">
+      <button
+        id="themeToggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Switch to dark mode"
+        title="Toggle dark mode">
+        <span class="theme-icon" aria-hidden="true">🌙</span>
+      </button>
+
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#labs">Labs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <span class="badge">ICT Student @ JOOUST · CodTech Intern · Cisco NetAcad Certified</span>
+      <h1>Hi, I'm <span>Emmanuel Kimtai</span></h1>
+      <p>
+        I build responsive websites and understand how they travel across networks —
+        from HTML/CSS in the browser to VLANs and Inter-VLAN routing on Cisco devices.
+      </p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn">Hire Me</a>
+        <a href="mailto:emmanuelkimtai04@gmail.com" class="btn-outline">Email Me</a>
+      </div>
+      <p class="hero-meta">📧 emmanuelkimtai04@gmail.com &nbsp;|&nbsp; 📞 +254 790 185 151</p>
+    </div>
+    <div class="hero-img">
+      <img src="profile_emmanuel.jpg" alt="Portrait of Emmanuel Kimtai" loading="lazy" width="330" height="330">
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <div class="about-grid">
+      <div>
+        <p>
+          I am <strong>Emmanuel Kimtai</strong>, a BSc. ICT student at
+          <strong>JOOUST</strong> (Jaramogi Oginga Odinga University of Science and Technology).
+          I build clean, responsive front-ends and configure the networks that carry them.
+        </p>
+        <p><strong>Web:</strong> HTML5, CSS3 (Flexbox &amp; Grid), responsive design, basic JavaScript.</p>
+        <p><strong>Networking:</strong> VLAN creation &amp; trunking, Inter-VLAN routing (Router-on-a-Stick), SVI, basic Cisco device configuration and troubleshooting.</p>
+        <p>Currently interning as a Web Development Intern at <strong>CodTech InfoTech Solutions Pvt. Ltd.</strong>, and certified by <strong>Cisco Networking Academy</strong> in Packet Tracer, Networking, and IoT (2026).</p>
+      </div>
+
+      <aside class="about-card">
+        <h3>🎓 Education</h3>
+        <p><strong>BSc. ICT</strong><br>JOOUST — Jaramogi Oginga Odinga University</p>
+
+        <h3>💼 Internship</h3>
+        <p>Web Development Intern<br>CodTech InfoTech Solutions</p>
+
+        <h3>🏅 Certifications</h3>
+        <p>Cisco Networking Academy<br>Packet Tracer · Networking · IoT (2026)</p>
+
+        <h3>📞 Contact</h3>
+        <p>
+          Email: <a href="mailto:emmanuelkimtai04@gmail.com">emmanuelkimtai04@gmail.com</a><br>
+          Phone: <a href="tel:+254790185151">+254 790 185 151</a><br>
+          Location: Bondo, Kenya
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <h2>My Skills</h2>
+    <div class="skills-grid">
+      <article class="skill-card">
+        <div class="icon" aria-hidden="true">💻</div>
+        <h4>Web Development</h4>
+        <p>HTML5, CSS3, Responsive Design</p>
+      </article>
+      <article class="skill-card">
+        <div class="icon" aria-hidden="true">🌐</div>
+        <h4>VLAN</h4>
+        <p>Creation, Access &amp; Trunk Ports</p>
+      </article>
+      <article class="skill-card">
+        <div class="icon" aria-hidden="true">🔀</div>
+        <h4>Inter-VLAN Routing</h4>
+        <p>Router-on-a-Stick, SVI</p>
+      </article>
+      <article class="skill-card">
+        <div class="icon" aria-hidden="true">🔧</div>
+        <h4>Networking Basics</h4>
+        <p>IP Addressing, Device Config</p>
+      </article>
+      <article class="skill-card">
+        <div class="icon" aria-hidden="true">⚡</div>
+        <h4>JavaScript</h4>
+        <p>Form Validation, DOM</p>
+      </article>
+      <article class="skill-card">
+        <div class="icon" aria-hidden="true">📁</div>
+        <h4>Git &amp; GitHub</h4>
+        <p>Version Control</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section id="certificates" class="section">
+    <h2>Certificates</h2>
+    <p class="section-intro">
+      Cisco Networking Academy credentials earned through the Networking Academy program.
+    </p>
+
+    <div class="cert-grid">
+
+      <article class="cert-card">
+        <a href="certificates/cert-getting-started-packet-tracer.png"
+           target="_blank" rel="noopener" class="cert-thumb">
+          <img src="certificates/cert-getting-started-packet-tracer.png"
+               alt="Getting Started with Cisco Packet Tracer certificate"
+               loading="lazy">
+        </a>
+        <div class="cert-body">
+          <h3>Getting Started with Cisco Packet Tracer</h3>
+          <p class="cert-issuer">Cisco Networking Academy · 26 Jan 2026</p>
+          <p class="cert-desc">
+            Introduction to the Packet Tracer simulation environment — building simple
+            topologies, cabling devices, and running basic connectivity tests.
+          </p>
+          <ul class="cert-skills">
+            <li>Packet Tracer interface &amp; device placement</li>
+            <li>Basic topology building &amp; cabling</li>
+          </ul>
+          <a href="certificates/cert-getting-started-packet-tracer.png"
+             class="cert-link" target="_blank" rel="noopener">View Certificate →</a>
+        </div>
+      </article>
+
+      <article class="cert-card">
+        <a href="certificates/cert-exploring-networking-packet-tracer.png"
+           target="_blank" rel="noopener" class="cert-thumb">
+          <img src="certificates/cert-exploring-networking-packet-tracer.png"
+               alt="Exploring Networking with Cisco Packet Tracer certificate"
+               loading="lazy">
+        </a>
+        <div class="cert-body">
+          <h3>Exploring Networking with Cisco Packet Tracer</h3>
+          <p class="cert-issuer">Cisco Networking Academy · 05 Feb 2026</p>
+          <p class="cert-desc">
+            Hands-on networking fundamentals — connecting switches and routers,
+            assigning IP addresses, and verifying end-to-end connectivity.
+          </p>
+          <ul class="cert-skills">
+            <li>IP addressing &amp; subnetting basics</li>
+            <li>Switch &amp; router configuration</li>
+          </ul>
+          <a href="certificates/cert-exploring-networking-packet-tracer.png"
+             class="cert-link" target="_blank" rel="noopener">View Certificate →</a>
+        </div>
+      </article>
+
+      <article class="cert-card">
+        <a href="certificates/cert-exploring-iot-packet-tracer.png"
+           target="_blank" rel="noopener" class="cert-thumb">
+          <img src="certificates/cert-exploring-iot-packet-tracer.png"
+               alt="Exploring Internet of Things with Cisco Packet Tracer certificate"
+               loading="lazy">
+        </a>
+        <div class="cert-body">
+          <h3>Exploring Internet of Things with Cisco Packet Tracer</h3>
+          <p class="cert-issuer">Cisco Networking Academy · 29 Apr 2026</p>
+          <p class="cert-desc">
+            Simulating IoT environments — connecting smart devices and sensors,
+            configuring home gateways, and enabling remote monitoring.
+          </p>
+          <ul class="cert-skills">
+            <li>IoT device &amp; sensor integration</li>
+            <li>Home gateway &amp; remote access setup</li>
+          </ul>
+          <a href="certificates/cert-exploring-iot-packet-tracer.png"
+             class="cert-link" target="_blank" rel="noopener">View Certificate →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PACKET TRACER LABS -->
+  <section id="labs" class="section">
+    <h2>Packet Tracer Labs</h2>
+    <p class="section-intro">
+      Cisco Packet Tracer (<code>.pkt</code>) labs I've built and verified.
+      <strong>Requires Cisco Packet Tracer</strong> to open —
+      free from <a href="https://www.netacad.com/" target="_blank" rel="noopener">Cisco Networking Academy</a>.
+    </p>
+
+    <article class="lab-featured">
+
+      <div class="lab-featured-head">
+        <div>
+          <span class="lab-tag">Featured Lab</span>
+          <h3>Inter-VLAN Routing — Router-on-a-Stick</h3>
+          <p>
+            A small LAN with 4 PCs, one Cisco 2960 switch, and one Cisco 2911 router.
+            Two VLANs (<strong>10 · Agriculture</strong> and <strong>20 · Informatics</strong>)
+            are trunked to the router, where sub-interfaces route traffic between them.
+            Verified end-to-end with ping — 4/4 replies, 0% loss.
+          </p>
+        </div>
+        <a href="assets/labs/inter-vlan-routing/inter-vlan-routing.pkt"
+           class="btn" download>Download .pkt</a>
+      </div>
+
+      <div class="lab-specs">
+        <div class="spec">
+          <span class="spec-label">Devices</span>
+          <span class="spec-value">2911 Router · 2960 Switch · 4 PCs</span>
+        </div>
+        <div class="spec">
+          <span class="spec-label">VLANs</span>
+          <span class="spec-value">10 (Agriculture), 20 (Informatics)</span>
+        </div>
+        <div class="spec">
+          <span class="spec-label">Subnets</span>
+          <span class="spec-value">192.168.1.0/24 · 192.168.2.0/24</span>
+        </div>
+        <div class="spec">
+          <span class="spec-label">Method</span>
+          <span class="spec-value">Router-on-a-Stick (802.1Q)</span>
+        </div>
+      </div>
+
+      <div class="lab-gallery">
+
+        <figure>
+          <a href="assets/labs/inter-vlan-routing/topology.png"
+             target="_blank" rel="noopener">
+            <img src="assets/labs/inter-vlan-routing/topology.png"
+                 alt="Network topology with 4 PCs, a switch, and a router"
+                 loading="lazy">
+          </a>
+          <figcaption>
+            <strong>Topology.</strong> Four PCs connected to Switch0, which trunks up
+            to Router0 — the physical layout of the whole lab.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <a href="assets/labs/inter-vlan-routing/show-vlan-brief.png"
+             target="_blank" rel="noopener">
+            <img src="assets/labs/inter-vlan-routing/show-vlan-brief.png"
+                 alt="show vlan brief output on the switch"
+                 loading="lazy">
+          </a>
+          <figcaption>
+            <strong>VLANs on the switch.</strong> <code>show vlan brief</code> confirms
+            VLAN 10 (Agriculture) on Fa0/1–2 and VLAN 20 (Informatics) on Fa0/3–4.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <a href="assets/labs/inter-vlan-routing/show-ip-int-brief.png"
+             target="_blank" rel="noopener">
+            <img src="assets/labs/inter-vlan-routing/show-ip-int-brief.png"
+                 alt="show ip interface brief output on the router"
+                 loading="lazy">
+          </a>
+          <figcaption>
+            <strong>Router sub-interfaces.</strong> <code>show ip int brief</code> shows
+            Gig0/0.10 (192.168.1.1) and Gig0/0.20 (192.168.2.2) both up — one physical
+            interface serving two VLANs.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <a href="assets/labs/inter-vlan-routing/ping-success.png"
+             target="_blank" rel="noopener">
+            <img src="assets/labs/inter-vlan-routing/ping-success.png"
+                 alt="Successful ping across VLANs with 0% packet loss"
+                 loading="lazy">
+          </a>
+          <figcaption>
+            <strong>Verification.</strong> A ping from one VLAN to the other returns
+            4/4 replies with 0% loss — proving inter-VLAN routing works.
+          </figcaption>
+        </figure>
+
+      </div>
+
+    </article>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <div class="contact-wrap">
+
+      <form id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Doe" autocomplete="name" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="jane@example.com" autocomplete="email" required>
+        </div>
+
+        <div class="field">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+        </div>
+
+        <p id="error" class="error" role="status" aria-live="polite"></p>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+
+      <aside class="contact-info">
+        <h3>Let's Connect</h3>
+        <p>📧 <a href="mailto:emmanuelkimtai04@gmail.com">emmanuelkimtai04@gmail.com</a></p>
+        <p>📞 <a href="tel:+254790185151">+254 790 185 151</a></p>
+        <p>📍 Bondo, Kenya — JOOUST Main Campus</p>
+        <p>🎓 BSc. ICT Student</p>
+        <a href="mailto:emmanuelkimtai04@gmail.com" class="btn btn-light">Email Me Directly</a>
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; <span id="year"></span> Emmanuel Kimtai · emmanuelkimtai04@gmail.com · JOOUST · CodTech Task 1</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
